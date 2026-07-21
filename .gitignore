@@ -1,4 +1,6 @@
 /target
+auto_bechmark_rust.py
+run_rust_hybrid.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
