@@ -1,8 +1,7 @@
 /target
-run_rust_hybrid.py
-heatmap_plustoken_pyo3.html
-auto_benchmark_rust.py
-
+/benchmarker
+/visual_generated
+/home/ariekany/heist_recovery/python_presentation/forensic_intelligence.html
 # Byte-compiled / optimized / DLL files
 __pycache__/
 .pytest_cache/
