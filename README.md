@@ -144,11 +144,7 @@ single session.
 
 ## License & Citation
 
-This repository is released under the [MIT License]. If you use this
-code or the analysis in your research, please cite (not yet published 'will update it soon'):
-
-> [Muhammad Arief Furqany (M.A. Furqany)]. [High Performance Rust-Python Blockchain Forensics for Money Laundering Anomaly Detection]. *International Journal of Electrical and Computer Engineering (NOT YET!)]*, [2026].
-> DOI: [DOI]
+This repository is released under the [MIT License].
 
 For questions, please open an issue on the repository.
 ```
