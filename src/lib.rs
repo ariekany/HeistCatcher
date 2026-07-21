@@ -4,18 +4,18 @@ use serde::Deserialize;
 use std::collections::{HashMap, HashSet};
 use std::fs;
 use std::path::Path;
-use rayon::prelude::*; // Pustaka Dewa untuk Multi-threading
+use rayon::prelude::*; 
 
-// --- FUNGSI HELPER: Ekstraksi Digit Pertama (Benford) ---
+// --- Helper Function: Extract First Digit (Benford) ---
 fn get_first_digit(mut n: u64) -> Option<usize> {
-    if n == 0 { return None; } // Benford mengabaikan angka 0
+    if n == 0 { return None; } // Benford ignore zero
     while n >= 10 {
         n /= 10;
     }
     Some(n as usize)
 }
 
-// --- 1. STRUKTUR DATA PEMBACA CSV ---
+// --- 1. DATA STRUCTURE TO READ CSV ---
 #[derive(Debug, Deserialize)]
 struct RawTransaction {
     tx_id: String,
@@ -24,14 +24,14 @@ struct RawTransaction {
     vout: String,
 }
 
-// Ditambahkan derive Clone agar bisa disalin antar thread
+// Add derive Clone to allow copying between threads
 #[derive(Debug, Deserialize, Clone)] 
 struct VoutData {
     address: String,
     value_satoshi: u64,
 }
 
-// --- 2. MESIN UNION-FIND (SYBIL CLUSTERING) ---
+// --- 2. Union-Find Machine (Sybil Clustering) ---
 struct UnionFind {
     parent: Vec<usize>,
     size: Vec<usize>,
@@ -85,7 +85,7 @@ impl UnionFind {
     }
 }
 
-// --- 3. KELAS MESIN FORENSIK (DIPANGGIL OLEH PYTHON) ---
+// --- Forensic Machine Class (Called by Python) ---
 #[pyclass]
 struct ForensicEngine {
     uf: UnionFind,

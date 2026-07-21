@@ -1,6 +1,7 @@
 /target
-auto_bechmark_rust.py
 run_rust_hybrid.py
+heatmap_plustoken_pyo3.html
+auto_benchmark_rust.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
